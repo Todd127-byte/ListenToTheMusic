@@ -1,0 +1,24 @@
+[
+    {
+        "name": "A",
+        "tracks": [
+            {
+                "title": "T1",
+                "artist": "Artist",
+                "album": "A",
+                "duration": "03:20"
+            }
+        ]
+    },
+    {
+        "name": "Alb",
+        "tracks": [
+            {
+                "title": "SongX",
+                "artist": "Singer",
+                "album": "Alb",
+                "duration": "02:10"
+            }
+        ]
+    }
+]

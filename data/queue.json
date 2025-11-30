@@ -1,0 +1,20 @@
+{
+    "queue": [
+        {
+            "title": "A",
+            "artist": "X",
+            "album": "Album",
+            "duration": "01:00"
+        },
+        {
+            "title": "B",
+            "artist": "Y",
+            "album": "Album",
+            "duration": "02:00"
+        }
+    ],
+    "current": 0,
+    "is_playing": false,
+    "repeat": false,
+    "shuffled": false
+}

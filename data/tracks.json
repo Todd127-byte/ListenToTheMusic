@@ -1,0 +1,14 @@
+[
+    {
+        "title": "T1",
+        "artist": "Artist",
+        "album": "A",
+        "duration": "03:20"
+    },
+    {
+        "title": "SongX",
+        "artist": "Singer",
+        "album": "Alb",
+        "duration": "02:10"
+    }
+]
