@@ -385,7 +385,5 @@ class PlaylistManager:
     def import_playlists(self, file_path):
         if file_path.lower().endswith('.json'):
             return self.import_from_json(file_path)
-        elif file_path.lower().endswith('.csv'):
-            return self.import_from_csv(file_path)
         else:
             return {"success": False, "error": "Unsupported file format! Use .json or .csv"}
