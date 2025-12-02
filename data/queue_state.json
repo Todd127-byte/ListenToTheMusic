@@ -1,0 +1,58 @@
+{
+    "tracks": [
+        {
+            "title": "Coffee and Cigarettes",
+            "artist": "The Paper Hearts",
+            "album": "Morning Vibes",
+            "duration": "03:42"
+        },
+        {
+            "title": "Golden Hour",
+            "artist": "Ava Rivers",
+            "album": "Morning Vibes",
+            "duration": "04:01"
+        },
+        {
+            "title": "Echoes in the Sky",
+            "artist": "The Lanterns",
+            "album": "Morning Vibes",
+            "duration": "05:12"
+        },
+        {
+            "title": "AND",
+            "artist": "LANY",
+            "album": "YOURSELF",
+            "duration": "14:05"
+        }
+    ],
+    "current_index": 1,
+    "is_shuffled": false,
+    "is_repeat": false,
+    "is_playing": false,
+    "original_order": [
+        {
+            "title": "Coffee and Cigarettes",
+            "artist": "The Paper Hearts",
+            "album": "Morning Vibes",
+            "duration": "03:42"
+        },
+        {
+            "title": "Golden Hour",
+            "artist": "Ava Rivers",
+            "album": "Morning Vibes",
+            "duration": "04:01"
+        },
+        {
+            "title": "Echoes in the Sky",
+            "artist": "The Lanterns",
+            "album": "Morning Vibes",
+            "duration": "05:12"
+        },
+        {
+            "title": "AND",
+            "artist": "LANY",
+            "album": "YOURSELF",
+            "duration": "14:05"
+        }
+    ]
+}

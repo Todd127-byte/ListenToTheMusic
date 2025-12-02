@@ -1,42 +1,119 @@
 [
-  {
-    "name": "Morning Vibes",
-    "created_at": "2025-11-30T08:15:12.452000",
-    "created_by": "user123",
-    "tracks": [
-      {
-        "track": {
-          "track_number": 1,
-          "title": "Coffee and Cigarettes",
-          "artist": "The Paper Hearts",
-          "album": "Morning Vibes",
-          "genre": "Indie Folk",
-          "duration": "03:42"
-        },
-        "added_at": "2025-11-30T08:16:05.123000"
-      },
-      {
-        "track": {
-          "track_number": 2,
-          "title": "Golden Hour",
-          "artist": "Ava Rivers",
-          "album": "Morning Vibes",
-          "genre": "Pop",
-          "duration": "04:01"
-        },
-        "added_at": "2025-11-30T08:17:45.987000"
-      },
-      {
-        "track": {
-          "track_number": 3,
-          "title": "Echoes in the Sky",
-          "artist": "The Lanterns",
-          "album": "Morning Vibes",
-          "genre": "Indie Rock",
-          "duration": "05:12"
-        },
-        "added_at": "2025-11-30T08:19:30.654000"
-      }
-    ]
-  }
+    {
+        "name": "Morning Vibes",
+        "created_at": "2025-11-30T08:15:12.452000",
+        "tracks": [
+            {
+                "track": {
+                    "title": "Coffee and Cigarettes",
+                    "artist": "The Paper Hearts",
+                    "album": "Morning Vibes",
+                    "duration": "03:42"
+                },
+                "added_at": "2025-11-30T08:16:05.123000"
+            },
+            {
+                "track": {
+                    "title": "Golden Hour",
+                    "artist": "Ava Rivers",
+                    "album": "Morning Vibes",
+                    "duration": "04:01"
+                },
+                "added_at": "2025-11-30T08:17:45.987000"
+            },
+            {
+                "track": {
+                    "title": "Echoes in the Sky",
+                    "artist": "The Lanterns",
+                    "album": "Morning Vibes",
+                    "duration": "05:12"
+                },
+                "added_at": "2025-11-30T08:19:30.654000"
+            },
+            {
+                "track": {
+                    "title": "AND",
+                    "artist": "LANY",
+                    "album": "YOURSELF",
+                    "duration": "14:05"
+                },
+                "added_at": "2025-12-02T13:10:07.380132"
+            }
+        ]
+    },
+    {
+        "name": "AN",
+        "created_at": "2025-12-02T12:59:55.034878",
+        "tracks": []
+    },
+    {
+        "name": "and",
+        "created_at": "2025-12-02T13:09:46.760464",
+        "tracks": []
+    },
+    {
+        "name": "Pavement",
+        "created_at": "2025-12-02T13:34:40.919374",
+        "tracks": [
+            {
+                "track": {
+                    "title": "Pavement",
+                    "artist": "cigarettes@sunset",
+                    "album": "YOUpavementRSELF",
+                    "duration": "3:05"
+                },
+                "added_at": "2025-12-02T13:34:40.921045"
+            }
+        ]
+    },
+    {
+        "name": "pahingi ako ng kiss",
+        "created_at": "2025-12-02T13:34:40.923326",
+        "tracks": [
+            {
+                "track": {
+                    "title": "pahingi ako ng kiss",
+                    "artist": "frank ely",
+                    "album": "pahingi ako ng kiss",
+                    "duration": "1:22"
+                },
+                "added_at": "2025-12-02T13:34:40.924460"
+            }
+        ]
+    },
+    {
+        "name": "heartbeat",
+        "created_at": "2025-12-02T13:34:40.926568",
+        "tracks": [
+            {
+                "track": {
+                    "title": "heartbeat",
+                    "artist": "high june",
+                    "album": "it never really mattered",
+                    "duration": "4:55"
+                },
+                "added_at": "2025-12-02T13:34:40.927518"
+            }
+        ]
+    },
+    {
+        "name": "KIKIT",
+        "created_at": "2025-12-02T13:46:08.385793",
+        "tracks": []
+    },
+    {
+        "name": "Losercore",
+        "created_at": "2025-12-02T13:59:04.804074",
+        "tracks": []
+    },
+    {
+        "name": "Something",
+        "created_at": "2025-12-02T13:59:04.806891",
+        "tracks": []
+    },
+    {
+        "name": "Something2.0",
+        "created_at": "2025-12-02T13:59:04.808667",
+        "tracks": []
+    }
 ]
