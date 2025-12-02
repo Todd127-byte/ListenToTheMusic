@@ -1,247 +1,100 @@
+import json
+
 class Track:
     def __init__(self, title, artist, album, duration):
-        self._title = title
-        self._artist = artist
-        self._album = album
-        self._duration = duration
-
-    @property
-    def title(self):
-        return self._title
-
-    @property
-    def artist(self):
-        return self._artist
-
-    @property
-    def album(self):
-        return self._album
-
-    @property
-    def duration(self):
-        return self._duration
-
-    @title.setter
-    def title(self, value):
-        self._title = value
-
-    @artist.setter
-    def artist(self, value):
-        self._artist = value
-
-    @album.setter
-    def album(self, value):
-        self._album = value
-
-    @duration.setter
-    def duration(self, value):
-        self._duration = value
-
-    def get_duration_seconds(self):
-        if not isinstance(self._duration, str):
-            return 0
-        parts = [p.strip() for p in self._duration.split(":") if p.strip()]
-        try:
-            if len(parts) == 2:
-                return int(parts[0]) * 60 + int(parts[1])
-            if len(parts) == 3:
-                return int(parts[0]) * 3600 + int(parts[1]) * 60 + int(parts[2])
-        except Exception:
-            return 0
-        return 0
-
-    def primary_artist(self):
-        return self._artist[0] if isinstance(self._artist, list) else self._artist
-
-    def format_display(self):
-        artist_display = ", ".join(self._artist) if isinstance(self._artist, list) else self._artist
-        return f"{self._title} - {artist_display} ({self._duration})"
-
-    def serialize(self):
-        return {"title": self._title, "artist": self._artist, "album": self._album, "duration": self._duration}
-
-    @classmethod
-    def deserialize(cls, data):
-        return cls(data.get("title"), data.get("artist"), data.get("album"), data.get("duration"))
-
-    def matches(self, other):
-        if not isinstance(other, Track):
-            return False
-        return (self._title == other._title and str(self._artist) == str(other._artist) and self._album == other._album and self._duration == other._duration)
-
-    def __repr__(self):
-        return self.format_display()
-class Track:
-    def __init__(self, title, artist, album, duration):
-        self._title = title
-        self._artist = artist
-        self._album = album
-        self._duration = duration
-
-    @property
-    def title(self):
-        return self._title
-
-    @property
-    def artist(self):
-        return self._artist
-
-    @property
-    def album(self):
-        return self._album
-
-    @property
-    def duration(self):
-        return self._duration
-
-    @title.setter
-    def title(self, value):
-        self._title = value
-
-    @artist.setter
-    def artist(self, value):
-        self._artist = value
-
-    @album.setter
-    def album(self, value):
-        self._album = value
-
-    @duration.setter
-    def duration(self, value):
-        self._duration = value
-
-    def get_duration_seconds(self):
-        """Parse duration into seconds supporting mm:ss and hh:mm:ss"""
-        if not isinstance(self._duration, str):
-            return 0
-        parts = [p.strip() for p in self._duration.split(":") if p.strip()]
-        try:
-            if len(parts) == 2:
-                return int(parts[0]) * 60 + int(parts[1])
-            if len(parts) == 3:
-                return int(parts[0]) * 3600 + int(parts[1]) * 60 + int(parts[2])
-        except Exception:
-            return 0
-        return 0
-
-    def primary_artist(self):
-        return self._artist[0] if isinstance(self._artist, list) else self._artist
-
-    def format_display(self):
-        artist_display = ", ".join(self._artist) if isinstance(self._artist, list) else self._artist
-        return f"{self._title} - {artist_display} ({self._duration})"
-
-    def serialize(self):
-        return {"title": self._title, "artist": self._artist, "album": self._album, "duration": self._duration}
-
-    @classmethod
-    def deserialize(cls, data):
-        return cls(data.get("title"), data.get("artist"), data.get("album"), data.get("duration"))
-
-    def matches(self, other):
-        if not isinstance(other, Track):
-            return False
-        return (self._title == other._title and str(self._artist) == str(other._artist) and self._album == other._album and self._duration == other._duration)
-
-    def __repr__(self):
-        return self.format_display()
-class Track:
-    def __init__(self, title, artist, album, duration):
-        self._title = title
-        self._artist = artist
-        self._album = album
-        self._duration = duration
-
-    @property
-    def title(self):
-        return self._title
-
-    @property
-    def artist(self):
-        return self._artist
-
-    @property
-    def album(self):
-        return self._album
-
-    @property
-    def duration(self):
-        return self._duration
-
-    @title.setter
-    def title(self, value):
-        self._title = value
-
-    @artist.setter
-    def artist(self, value):
-        self._artist = value
-
-    @album.setter
-    def album(self, value):
-        self._album = value
-
-    @duration.setter
-    def duration(self, value):
-        self._duration = value
-
-    def get_duration_seconds(self):
-        """Parse duration into seconds.
-
-        Accepts strings like "mm:ss" or "hh:mm:ss" and tolerates surrounding whitespace.
-        If parsing fails, returns 0 and prints a short warning.
         """
-        if not isinstance(self._duration, str):
-            print(f"Warning: track '{self._title}' duration is not a string: {self._duration}")
-            return 0
-
-        parts = [p.strip() for p in self._duration.split(":") if p.strip() != ""]
-
+        Represent a music track with title, artist, album and duration.
+        
+        This class store track information and provide methods to access them.
+        It support multiple artists and can calculate duration in seconds.
+        
+        Attributes:
+            __title: Track title
+            __artist: Artist name or list of artist
+            __album: Album name where track belongs
+            __duration: Track duration in mm:ss format
+        """
+        # Private attributes with data encapsulation
+        
+        self.__title = title
+        self.__artist = artist  # can be string or list for multiple artists
+        self.__album = album
+        self.__duration = duration  # format: "mm:ss"
+    
+    # Getters for encapsulation
+    def get_title(self):
+        return self.__title
+    
+    def get_artist(self):
+        return self.__artist
+    
+    def get_album(self):
+        return self.__album
+    
+    def get_duration(self):
+        return self.__duration
+    
+    # Setters (in case we need to modify later)
+    def set_title(self, title):
+        self.__title = title
+    
+    def set_artist(self, artist):
+        self.__artist = artist
+    
+    def set_album(self, album):
+        self.__album = album
+    
+    def set_duration(self, duration):
+        self.__duration = duration
+    
+    # Convert duration to seconds for calculations
+    def duration_to_seconds(self):
         try:
-            if len(parts) == 2:
-                minutes = int(parts[0])
-                seconds = int(parts[1])
-                if minutes < 0 or seconds < 0:
-                    raise ValueError()
-                return minutes * 60 + seconds
-            elif len(parts) == 3:
-                hours = int(parts[0])
-                minutes = int(parts[1])
-                seconds = int(parts[2])
-                if hours < 0 or minutes < 0 or seconds < 0:
-                    raise ValueError()
-                return hours * 3600 + minutes * 60 + seconds
-            else:
-                raise ValueError()
-        except Exception:
-            print(f"Warning: couldn't parse duration '{self._duration}' for track '{self._title}', treating as 0s")
-            return 0
-
-    def primary_artist(self):
-        return self._artist[0] if isinstance(self._artist, list) else self._artist
-
-    def format_display(self):
-        artist_display = ", ".join(self._artist) if isinstance(self._artist, list) else self._artist
-        return f"{self._title} - {artist_display} ({self._duration})"
-
-    def serialize(self):
+            parts = self.__duration.split(":")
+            if len(parts) != 2:
+                return 0  # Invalid format, return 0
+            minutes = int(parts[0])
+            seconds = int(parts[1])
+            return minutes * 60 + seconds
+        except (ValueError, IndexError):
+            return 0  # Handle invalid duration format
+        
+    # Get main artist (for sorting when multiple artists)
+    def get_main_artist(self):
+        if isinstance(self.__artist, list):
+            return self.__artist[0]
+        return self.__artist
+    
+    # Display format
+    def display(self):
+        artist_str = self.__artist
+        if isinstance(self.__artist, list):
+            artist_str = ", ".join(self.__artist)
+        return f"{self.__title} - {artist_str} ({self.__duration})"
+    
+    # For saving to JSON
+    def to_dict(self):
         return {
-            "title": self._title,
-            "artist": self._artist,
-            "album": self._album,
-            "duration": self._duration,
+            "title": self.__title,
+            "artist": self.__artist,
+            "album": self.__album,
+            "duration": self.__duration
         }
-
-    @classmethod
-    def deserialize(cls, data):
-        return cls(data["title"], data["artist"], data["album"], data["duration"])
-
-    def matches(self, other):
+    
+    # For loading from JSON
+    @staticmethod
+    def from_dict(data):
+        return Track(data["title"], data["artist"], data["album"], data["duration"])
+    
+    # Equality check for comparing tracks
+    def __eq__(self, other):
         if not isinstance(other, Track):
             return False
-        return (self._title == other._title and
-                str(self._artist) == str(other._artist) and
-                self._album == other._album and
-                self._duration == other._duration)
-
-    def __repr__(self):
-        return self.format_display()
+        return (self.__title == other.__title and 
+                str(self.__artist) == str(other.__artist) and
+                self.__album == other.__album and
+                self.__duration == other.__duration)
+    
+    # String representation
+    def __str__(self):
+        return self.display()

@@ -1,24 +1,44 @@
 [
-    {
-        "name": "A",
-        "tracks": [
-            {
-                "title": "T1",
-                "artist": "Artist",
-                "album": "A",
-                "duration": "03:20"
-            }
-        ]
-    },
-    {
-        "name": "Alb",
-        "tracks": [
-            {
-                "title": "SongX",
-                "artist": "Singer",
-                "album": "Alb",
-                "duration": "02:10"
-            }
-        ]
-    }
+  {
+    "name": "Midnight Echoes",
+    "year": 2021,
+    "genre": "Indie Rock",
+    "tracks": [
+      {
+        "track_number": 1,
+        "title": "Shadows in the Rain",
+        "artist": "The Lanterns",
+        "album": "Midnight Echoes",
+        "duration": "04:12"
+      },
+      {
+        "track_number": 2,
+        "title": "Fading Lights",
+        "artist": "The Lanterns",
+        "album": "Midnight Echoes",
+        "duration": "03:45"
+      }
+    ]
+  },
+  {
+    "name": "Golden Horizon",
+    "year": 2019,
+    "genre": "Pop",
+    "tracks": [
+      {
+        "track_number": 1,
+        "title": "Sunrise Dreams",
+        "artist": "Ava Rivers",
+        "album": "Golden Horizon",
+        "duration": "02:58"
+      },
+      {
+        "track_number": 2,
+        "title": "Ocean Eyes",
+        "artist": "Ava Rivers",
+        "album": "Golden Horizon",
+        "duration": "03:33"
+      }
+    ]
+  }
 ]

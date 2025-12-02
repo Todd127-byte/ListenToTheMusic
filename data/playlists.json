@@ -1,17 +1,42 @@
 [
-    {
-        "name": "MyList",
-        "created_at": "2025-11-30T11:34:23.893437",
-        "tracks": [
-            {
-                "track": {
-                    "title": "SongX",
-                    "artist": "Singer",
-                    "album": "Alb",
-                    "duration": "02:10"
-                },
-                "added_at": "2025-11-30T11:34:23.900438"
-            }
-        ]
-    }
+  {
+    "name": "Morning Vibes",
+    "created_at": "2025-11-30T08:15:12.452000",
+    "created_by": "user123",
+    "tracks": [
+      {
+        "track": {
+          "track_number": 1,
+          "title": "Coffee and Cigarettes",
+          "artist": "The Paper Hearts",
+          "album": "Morning Vibes",
+          "genre": "Indie Folk",
+          "duration": "03:42"
+        },
+        "added_at": "2025-11-30T08:16:05.123000"
+      },
+      {
+        "track": {
+          "track_number": 2,
+          "title": "Golden Hour",
+          "artist": "Ava Rivers",
+          "album": "Morning Vibes",
+          "genre": "Pop",
+          "duration": "04:01"
+        },
+        "added_at": "2025-11-30T08:17:45.987000"
+      },
+      {
+        "track": {
+          "track_number": 3,
+          "title": "Echoes in the Sky",
+          "artist": "The Lanterns",
+          "album": "Morning Vibes",
+          "genre": "Indie Rock",
+          "duration": "05:12"
+        },
+        "added_at": "2025-11-30T08:19:30.654000"
+      }
+    ]
+  }
 ]
