@@ -285,6 +285,7 @@ class Library:
                         else:
                             duplicates += 1
                         
+                    
                     except Exception as e:
                         errors.append(f"Error with row: {str(e)}")
                         skipped += 1

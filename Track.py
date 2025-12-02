@@ -33,20 +33,7 @@ class Track:
     
     def get_duration(self):
         return self.__duration
-    
-    # Setters (in case we need to modify later)
-    def set_title(self, title):
-        self.__title = title
-    
-    def set_artist(self, artist):
-        self.__artist = artist
-    
-    def set_album(self, album):
-        self.__album = album
-    
-    def set_duration(self, duration):
-        self.__duration = duration
-    
+ 
     # Convert duration to seconds for calculations
     def duration_to_seconds(self):
         try:

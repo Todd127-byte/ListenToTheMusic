@@ -3,37 +3,19 @@ import os
 from datetime import datetime
 from Track import Track
 
-# Simple linked list node for playlist tracks
+#linked list node for playlist tracks
 class PlaylistNode:
-    """
-    Represent a node in singly linked list for playlist.
+   # Represent a node in linked list for playlist.
     
-    Each node store a track with timestamp of when it was added.
-    
-    Attributes:
-        track: The track stored in this node
-        next: Pointer to next node in playlist
-        added_at: Timestamp when track was added to playlist
-    """
     def __init__(self, track, added_at=None):
         self.track = track
         self.next = None
         self.added_at = added_at if added_at else datetime.now()
 
 class Playlist:
-    """
-    Represent a playlist with tracks in linked list.
-    
-    Playlists store tracks in order they was added.
-    It prevent duplicates and can be sorted by different criteria.
-    
-    Attributes:
-        __name: Playlist name
-        __head: First node in linked list
-        __track_set: Set for prevent duplicate tracks
-        __size: Number of track in playlist
-        __created_at: When playlist was created
-    """
+
+    #Represent a playlist with tracks in linked list.
+
     def __init__(self, name, created_at=None):
         self.__name = name
         self.__head: PlaylistNode = None  # Linked list of tracks
@@ -121,11 +103,6 @@ class Playlist:
     
     # Sort tracks in playlist (temporary - only in memory)
     def sort_tracks(self, criteria="date_added"):
-        """
-        Sort tracks by given criteria.
-        criteria: "date_added", "title", "artist", "duration"
-        Uses 5-level tie-breaker: title -> artist -> album -> duration -> date
-        """
         if self.__head is None:
             return
         
@@ -234,17 +211,6 @@ class Playlist:
     
 # Playlist Manager to handle multiple playlists                                           
 class PlaylistManager:
-    """
-    Manage all playlists in the system.
-    
-    This class create, save and load playlists from files.
-    It support importing from JSON and CSV format.
-    
-    Attributes:
-        __playlists: Dictionary mapping name to playlist
-        __file_path: Path to playlists JSON file
-        __library: Reference to library for add imported tracks
-    """
     def __init__(self, library=None):
         self.__playlists = {}  # Hash map: name -> Playlist
         self.__file_path = "data/playlists.json"
@@ -275,10 +241,6 @@ class PlaylistManager:
     
     # Sort playlists and return sorted list
     def sort_playlists(self, criteria="date_created"):
-        """
-        Sort playlists by given criteria and return sorted list.
-        criteria: "date_created", "name", "duration"
-        """
         playlists = self.get_all_playlists()
         
         if criteria == "date_created":
@@ -298,10 +260,6 @@ class PlaylistManager:
     
     # Display all playlists with pagination
     def display_playlists(self, page=1, sorted_playlists=None):
-        """
-        Display playlists with pagination.
-        If sorted_playlists is provided, use that order instead of default.
-        """
         if sorted_playlists is not None:
             playlists = sorted_playlists
         else:
@@ -329,10 +287,6 @@ class PlaylistManager:
     
     # Get playlist by index (for selection)
     def get_playlist_by_index(self, index, sorted_playlists=None):
-        """
-        Get playlist by index.
-        If sorted_playlists is provided, use that order instead of default.
-        """
         if sorted_playlists is not None:
             playlists = sorted_playlists
         else:
