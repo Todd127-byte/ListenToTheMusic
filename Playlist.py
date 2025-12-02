@@ -6,16 +6,13 @@ from Track import Track
 #linked list node for playlist tracks
 class PlaylistNode:
    # Represent a node in linked list for playlist.
-    
     def __init__(self, track, added_at=None):
         self.track = track
         self.next = None
         self.added_at = added_at if added_at else datetime.now()
 
 class Playlist:
-
     #Represent a playlist with tracks in linked list.
-
     def __init__(self, name, created_at=None):
         self.__name = name
         self.__head: PlaylistNode = None  # Linked list of tracks
@@ -369,76 +366,6 @@ class PlaylistManager:
                         
                     except Exception as e:
                         errors.append(f"Error with playlist: {str(e)}")
-                        skipped += 1
-                
-                self.__save_to_file()
-                
-                return {
-                    "success": True,
-                    "imported": imported,
-                    "duplicates": duplicates,
-                    "skipped": skipped,
-                    "errors": errors
-                }
-                
-        except Exception as e:
-            return {"success": False, "error": f"Error reading file: {str(e)}"}
-    
-    # Import playlists from CSV file
-    def import_from_csv(self, file_path):
-        try:
-            import csv
-            
-            with open(file_path, 'r') as f:
-                reader = csv.DictReader(f)
-                
-                imported = 0
-                duplicates = 0
-                skipped = 0
-                errors = []
-                playlists_cache = {}  # Track playlists we're building
-                
-                for row in reader:
-                    try:
-                        name = row["name"].strip()
-                        title = row["title"].strip()
-                        artist = row["artist"].strip()
-                        album = row["album"].strip()
-                        duration = row["duration"].strip()
-                        
-                        # Parse multi-artist
-                        if "," in artist and not artist.startswith('"'):
-                            artist = [a.strip() for a in artist.split(",")]
-                        
-                        # Create track
-                        track = Track(title, artist, album, duration)
-                        
-                        # Get or create playlist
-                        if name not in playlists_cache:
-                            if name in self.__playlists:
-                                # Playlist already exists, mark as duplicate
-                                playlists_cache[name] = None  # Mark as duplicate
-                                duplicates += 1
-                                continue
-                            else:
-                                playlist = self.create_playlist(name)
-                                if playlist:
-                                    playlists_cache[name] = playlist
-                                    imported += 1
-                                else:
-                                    playlists_cache[name] = None
-                                    skipped += 1
-                                    continue
-                        
-                        # Add track to playlist (if not duplicate)
-                        if playlists_cache[name] is not None:
-                            playlists_cache[name].add_track(track)
-                            # Automatically add track to library if library reference exists
-                            if self.__library:
-                                self.__library.add_track(track)
-                        
-                    except Exception as e:
-                        errors.append(f"Error with row: {str(e)}")
                         skipped += 1
                 
                 self.__save_to_file()

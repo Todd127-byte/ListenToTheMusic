@@ -1,0 +1,29 @@
+[
+  {
+    "track_number": 1,
+    "title": "Starlight Avenue",
+    "artist": "Neon Skies",
+    "album": "City Lights",
+    "genre": "Synthwave",
+    "year": 2023,
+    "duration": "03:47"
+  },
+  {
+    "track_number": 2,
+    "title": "Whispers in the Wind",
+    "artist": "Ava Rivers",
+    "album": "Golden Horizon",
+    "genre": "Indie Pop",
+    "year": 2021,
+    "duration": "04:05"
+  },
+  {
+    "track_number": 3,
+    "title": "Echoes of Tomorrow",
+    "artist": "The Lanterns",
+    "album": "Midnight Echoes",
+    "genre": "Indie Rock",
+    "year": 2022,
+    "duration": "05:12"
+  }
+]

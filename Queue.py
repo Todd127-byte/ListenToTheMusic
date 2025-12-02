@@ -21,23 +21,6 @@ class QueueNode:
         self.prev: Track = None
 
 class MusicQueue:
-    """
-    Manage playback queue using doubly linked list.
-    
-    Queue support play, pause, next, previous and shuffle.
-    It save state to file for restore later.
-    
-    Attributes:
-        __head: First node in queue
-        __tail: Last node in queue
-        __current: Currently playing track node
-        __size: Number of track in queue
-        __is_shuffled: Whether queue is shuffled
-        __is_repeat: Whether repeat mode is on
-        __is_playing: Whether music is playing
-        __original_order: Original track order before shuffle
-        __file_path: Path to queue state file
-    """
     def __init__(self):
         self.__head = None
         self.__tail = None

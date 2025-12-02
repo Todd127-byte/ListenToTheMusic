@@ -5,7 +5,7 @@ from Track import Track
 
 def main_menu():
     print("\n" + "="*40)
-    print("    LISTEN TO THE MUSIC")
+    print("SPOTIFY PREMIUM PRO MAX ULTRA HD 4K 1080P!!")
     print("="*40)
     print("[1] Music Library")
     print("[2] Playlists")

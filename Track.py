@@ -1,21 +1,8 @@
 import json
 
 class Track:
-    def __init__(self, title, artist, album, duration):
-        """
-        Represent a music track with title, artist, album and duration.
-        
-        This class store track information and provide methods to access them.
-        It support multiple artists and can calculate duration in seconds.
-        
-        Attributes:
-            __title: Track title
-            __artist: Artist name or list of artist
-            __album: Album name where track belongs
-            __duration: Track duration in mm:ss format
-        """
-        # Private attributes with data encapsulation
-        
+    def __init__(self, title, artist, album, duration):  
+        # Private attributes with data encapsulation 
         self.__title = title
         self.__artist = artist  # can be string or list for multiple artists
         self.__album = album

@@ -1,6 +1,5 @@
 import json
 import os
-import csv
 from Track import Track
 from Album import AlbumManager
 
@@ -239,65 +238,6 @@ class Library:
             
         except json.JSONDecodeError:
             return {"success": False, "error": "Invalid JSON format!"}
-        except Exception as e:
-            return {"success": False, "error": f"Error reading file: {str(e)}"}
-    
-    # Import tracks from CSV file
-    def import_from_csv(self, file_path):
-        if not os.path.exists(file_path):
-            return {"success": False, "error": "File not found!"}
-        
-        try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                csv_reader = csv.DictReader(f)
-                
-                imported = 0
-                skipped = 0
-                duplicates = 0
-                errors = []
-                
-                for row in csv_reader:
-                    try:
-                        # Validate required fields
-                        if not all(key in row for key in ['title', 'artist', 'album', 'duration']):
-                            errors.append(f"Missing required fields in row")
-                            skipped += 1
-                            continue
-                        
-                        # Handle multiple artists (comma separated)
-                        artist = row['artist']
-                        if ',' in artist:
-                            # Split by comma and strip whitespace
-                            artist = [a.strip() for a in artist.split(',')]
-                        
-                        # Create track
-                        track = Track(
-                            row['title'].strip(),
-                            artist,
-                            row['album'].strip(),
-                            row['duration'].strip()
-                        )
-                        
-                        # Add to library (returns False if duplicate)
-                        was_added = self.add_track(track)
-                        if was_added:
-                            imported += 1
-                        else:
-                            duplicates += 1
-                        
-                    
-                    except Exception as e:
-                        errors.append(f"Error with row: {str(e)}")
-                        skipped += 1
-                
-                return {
-                    "success": True,
-                    "imported": imported,
-                    "duplicates": duplicates,
-                    "skipped": skipped,
-                    "errors": errors
-                }
-                
         except Exception as e:
             return {"success": False, "error": f"Error reading file: {str(e)}"}
     

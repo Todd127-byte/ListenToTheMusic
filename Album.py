@@ -2,16 +2,6 @@ import json
 import os
 
 class Album:
-    """
-    Represent a music album with collection of tracks.
-    
-    Albums group tracks by name and calculate total duration.
-    Duplicate tracks is not allowed in same album.
-    
-    Attributes:
-        __name: Album name
-        __tracks: List of track in the album
-    """
     def __init__(self, name):
         self.__name = name
         self.__tracks = []  # List of tracks in this album
